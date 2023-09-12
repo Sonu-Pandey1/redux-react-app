@@ -1,11 +1,24 @@
+import './App.scss';
+import Home from "./components/Home/Home"
+import PageNotFound from "./components/PageNotFound/PageNotFound"
+import MovieDetail from "./components/MovieDetail/MovieDetail"
+import Header from "./components/Header/Header"
+import Footer from "./components/Footer/Footer"
+import { Route, Routes } from 'react-router-dom';
 
-// import './App.css';
 
 function App() {
   return (
-    <>
-      <h2>app</h2>
-    </>
+    <div className='app'>
+    <Header/>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/movie/:imdbID' element={<MovieDetail/>}/>
+      <Route path='/*' element={<PageNotFound/>}/>
+    </Routes>
+    <Footer/>
+      
+    </div>
   );
 }
 
