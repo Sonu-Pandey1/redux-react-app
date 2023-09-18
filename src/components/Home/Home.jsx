@@ -8,9 +8,12 @@ import { fetchAsyncMovies, fetchAsyncShows } from "../../features/Movie/MovieSli
 export default function Home() {
     const dispatch = useDispatch()
 
+    const  movieText = "harry";
+    const showTerm = "Friends"
+
     useEffect(() => {
-        dispatch(fetchAsyncMovies())
-        dispatch(fetchAsyncShows())
+        dispatch(fetchAsyncMovies(movieText))
+        dispatch(fetchAsyncShows(showTerm))
     }, [dispatch]);
 
 
